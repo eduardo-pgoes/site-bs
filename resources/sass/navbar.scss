@@ -1,0 +1,32 @@
+@import 'variables';
+
+.navbar-color {
+    background-color: #1E3823 !important;
+}
+  
+.navbar {
+    padding: 0rem 0rem !important;
+}
+  
+.navbar-brand {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+  
+.navbar-gambi {
+    /* eu também não queria fazer isso, tales. desculpa. */
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+}
+
+.nav-list li {
+    padding: 0em 1em;
+}
+  
+.nav-item {
+    font-weight: 100;
+    text-transform: uppercase;
+}

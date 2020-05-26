@@ -1,0 +1,26 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Variables
+@import 'variables';
+
+// Navbar
+@import 'navbar';
+
+// Banners
+@import 'hero';
+
+@mixin google-font($family) {
+    @import url("http://fonts.googleapis.com/css?family=#{$family}");
+  }
+  
+@include google-font("Roboto");
+@include google-font("Roboto Condensed");
+
+
+body {
+    font-family: Roboto !important;
+}
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
