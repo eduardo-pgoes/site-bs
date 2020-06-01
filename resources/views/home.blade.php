@@ -6,4 +6,5 @@
      rgba(50,91,57,0.8) 100%),
     url('{{ asset('assets/homebanner.jpg')}}');"/>
     <x-identidade/>
+    <x-front-embed/>
 @endsection
