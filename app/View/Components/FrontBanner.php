@@ -15,14 +15,30 @@ class FrontBanner extends Component
     public $title;
 
     /**
+     * O conteúdo do banner.
+     *
+     * @var string
+     */
+    public $content;
+
+    /**
+     * Estilo de background do banner.
+     *
+     * @var string
+     */
+    public $bgStyle;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title)
+    public function __construct($title, $content, $bgStyle)
     {
         //
+        $this->bgStyle = $bgStyle;
         $this->title = $title;
+        $this->content = $content;
     }
 
     /**
