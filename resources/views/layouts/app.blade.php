@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark navbar-color shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-color shadow-sm">
             <div class="container navbar-gambi">
             
                 <a class="navbar-brand" href="{{ url('/') }}">
