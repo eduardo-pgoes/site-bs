@@ -7,4 +7,5 @@
     url('{{ asset('assets/homebanner.jpg')}}');"/>
     <x-identidade/>
     <x-front-embed/>
+    <x-front-carousel/>
 @endsection
