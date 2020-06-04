@@ -10,13 +10,16 @@
 // Banners
 @import 'hero';
 
+// Componentes
+@import 'identidade';
+
+// Função pra importar fontes (se em algum momento precisarmos importar fontes novas)
 @mixin google-font($family) {
     @import url("http://fonts.googleapis.com/css?family=#{$family}");
   }
   
 @include google-font("Roboto");
 @include google-font("Roboto Condensed");
-
 
 body {
     font-family: Roboto !important;

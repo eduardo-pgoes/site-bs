@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);@import url(http://fonts.googleapis.com/css?family=Roboto);@import url(http://fonts.googleapis.com/css?family=Roboto Condensed);@charset "UTF-8";
 
+.img-identidade {
+  margin-bottom: 1rem;
+}
+
 .navbar-color {
   background-color: #1E3823 !important;
 }
@@ -38,6 +42,7 @@
   justify-content: center !important;
   align-items: center;
   display: flex !important;
+  margin-bottom: 0rem !important;
   height: 50vh;
 }
 

@@ -2,11 +2,16 @@
     color: white;
     background-position: center center;
     background-size: cover;
+    justify-content: center !important;
+    align-items: center;
+    display: flex !important;
+    margin-bottom: 0rem !important;
     height: 50vh;
-}
-
+  }
+  
 .front-hero-text {
-    background-image: linear-gradient(180deg, rgba(4, 53, 15, 0.79) 0%, rgba(4, 48, 14, 0.52) 100%);
-    font-family: 'Roboto Condensed';
-    font-weight: bold;
+  background-image: linear-gradient(180deg, rgba(4, 53, 15, 0.79) 0%, rgba(4, 48, 14, 0.52) 100%);
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.2em 0.2em;
 }
