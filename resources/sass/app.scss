@@ -12,6 +12,7 @@
 
 // Componentes
 @import 'identidade';
+@import 'embed';
 
 // Função pra importar fontes (se em algum momento precisarmos importar fontes novas)
 @mixin google-font($family) {
