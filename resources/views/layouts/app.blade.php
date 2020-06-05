@@ -23,16 +23,15 @@
     <div id="app">
         <nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-color shadow-sm">
             <div class="container navbar-gambi">
-            
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="assets/logo.png" height="60">
                 </a>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    <!-- FIXME itens somem da navbar quando a width chega a ~755px -->
                     <ul class="navbar-nav nav-list mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/') }}">Home
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ url('/') }}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                         </li>
@@ -87,7 +86,9 @@
         </nav>
 
         <main>
-            @yield('content')
+            <div style="margin-top:60px">
+                @yield('content')
+            </div
         </main>
     </div>
 </body>
