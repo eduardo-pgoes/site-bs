@@ -32,21 +32,21 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav nav-list mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="{{ url('/') }}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
+                            <a class="nav-link" href="{{ url('sobre') }}">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">História</a>
+                            <a class="nav-link" href="{{ url('historia') }}">História</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Apoio</a>
+                            <a class="nav-link" href="{{ url('apoio') }}">Apoio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="{{ url('blog') }}">Blog</a>
                         </li>
                     </ul>
 
@@ -70,9 +70,9 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

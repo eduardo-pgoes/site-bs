@@ -1,4 +1,4 @@
-<div>
+<!--TODO Arrumar visualização do carrosel-->
 <div class="jumbotron-fluid jumbotron-carousel">
     <h2 class="text-center text-front-embed">
             Alguns eventos dos quais participamos:
@@ -29,5 +29,4 @@
         <span class="sr-only">Próxima</span>
     </a>
     </div>
-</div>
 </div>
