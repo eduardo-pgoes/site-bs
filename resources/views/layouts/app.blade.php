@@ -88,7 +88,7 @@
         <main>
             <div style="margin-top:60px">
                 @yield('content')
-            </div
+            </div>
         </main>
     </div>
 </body>
