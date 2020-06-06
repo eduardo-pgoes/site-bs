@@ -25,9 +25,7 @@ Route::get('/historia', function () {
     return view('historia');
 });
 
-Route::get('/apoio', function () {
-    return view('apoio');
-});
+Route::get('/apoio', 'PagesController@apoio');
 
 Route::get('/blog', function () {
     return view('blog');

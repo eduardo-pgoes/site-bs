@@ -12,36 +12,39 @@
                 Doloremque eius et, quidem quasi suscipit aliquid beatae vero vitae blanditiis. 
                 Ipsum aspernatur quas reprehenderit?
             </p> 
-            <div>   
-                <div class="row justify-content-md-center align-items-center" style="margin:25px 0" >
-                    <div class="col">
-                        <img src = "assets/apoio/3D Tecnologia Preto.png" style="max-width:90%; max-height:100%; " >
-                    </div>
-                    <div class="col">
-                        <img src = "assets/apoio/Collins Aerospace.png" style="max-width:90%; max-height:100%; " >
-                    </div>
-                </div>
-                <div class="row justify-content-md-center align-items-center" style="margin:25px 0">
-                    <div class="col">
-                        <img src = "assets/apoio/FESMO.png" style="max-width:90%; max-height:100%; " >
-                    </div>
-                    <div class="col">
-                        <img src = "assets/apoio/IFSP.png" style="max-width:90%; max-height:100%; " >
-                    </div>
-                </div>
-                <div class="row justify-content-md-center align-items-center" style="margin:25px 0">
-                    <div class="col">
-                        <img src = "assets/apoio/micro-assit.png" style="max-width:90%; max-height:100%;">
-                    </div>
-                    <div class="col">
-                        <img src = "assets/apoio/STC.png" style="max-width:90%; max-height:100%;" >
-                    </div>
-                </div>
-                <div class="row justify-content-md-center align-items-center" style="margin:25px 0">
-                    <div class="col">
-                        <img src = "assets/apoio/Usimaza-azul.png" style="max-width:45%; max-height:100%;" >
-                    </div>
-                </div>
+            <div>               
+                @foreach ($files as $file)
+                    @if($loop->last)
+                        @if ($loop->odd)
+                            <div class="row justify-content-md-center align-items-center" style="margin:25px 0" >
+                                <div class="col">
+                                    <img src = "{{$file}}" style="max-width:45%; max-height:100%; " >
+                                </div>
+                            </div>
+                        @endif
+
+                        @if ($loop->even)
+                                <div class="col">
+                                    <img src = "{{$file}}" style="max-width:90%; max-height:100%; " >
+                                </div>
+                            </div>
+                        @endif
+                    @else
+                        @if ($loop->odd)
+                            <div class="row justify-content-md-center align-items-center" style="margin:25px 0" >
+                                <div class="col">
+                                    <img src = "{{$file}}" style="max-width:90%; max-height:100%; " >
+                             </div>
+                        @endif
+
+                        @if ($loop->even)
+                                <div class="col">
+                                    <img src = "{{$file}}" style="max-width:90%; max-height:100%; " >
+                                </div>
+                            </div>
+                        @endif
+                    @endif
+                @endforeach
             </div>
         </div>
         <hr/>
@@ -55,7 +58,8 @@
             Ipsum aspernatur quas reprehenderit?
             </p> 
 
-            <img src = "assets/apoio/AJAPET.png" style="width:80%" >
+            <img src = "storage/apoio/AJAPET.png" style="width:80%" >
         </div>
     </div>    
 @endsection
+
