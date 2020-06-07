@@ -1,5 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);@import url(http://fonts.googleapis.com/css?family=Roboto);@import url(http://fonts.googleapis.com/css?family=Roboto Condensed);@charset "UTF-8";
 
+.h1-media {
+  font-size: 3.5rem !important;
+}
+
+@include media-breakpoint-up(sm) {
+  .h1-media {
+    font-size: 2rem !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .h1-media {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .h1-media {
+    font-size: 1.6rem;
+  }
+}
+
 .img-identidade {
   margin-bottom: 1rem;
 }
