@@ -33,4 +33,7 @@
     <div style="margin-top: 2rem">
         <x-identidade-areas/>
     </div>
+    <div>
+        <x-premios/>
+    </div>
 @endsection
