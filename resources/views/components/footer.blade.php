@@ -1,0 +1,5 @@
+<div>
+    <nav class="navbar sticky-bottom navbar-light bg-light">
+        <a class="navbar-brand" href="#">Fixed bottom</a>
+    </nav>
+</div>

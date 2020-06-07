@@ -11,13 +11,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <img class="d-block w-100" src="{{URL::asset('assets/homebanner.jpg')}}" alt="Primeira foto">
+        <img class="d-block w-100" src="assets/homebanner.jpg" alt="Primeira foto">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="{{URL::asset('assets/homebanner.jpg')}}" alt="Segunda foto">
+        <img class="d-block w-100" src="assets/homebanner.jpg" alt="Segunda foto">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="{{URL::asset('assets/homebanner.jpg')}}" alt="Terceira foto">
+        <img class="d-block w-100" src="assets/homebanner.jpg" alt="Terceira foto">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselFrontIndicators" role="button" data-slide="prev">
