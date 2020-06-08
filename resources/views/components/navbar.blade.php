@@ -5,7 +5,6 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <!-- FIXME itens somem da navbar quando a width chega a ~755px -->
             <ul class="navbar-nav nav-list mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url('/') }}">Home

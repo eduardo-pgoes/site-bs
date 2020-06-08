@@ -3,6 +3,40 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto%20Condensed);
 @charset "UTF-8";
 
+#text-footer{
+  color:white;
+  font-size: 2vw;
+  width: 100%;
+}
+
+#icons-footer{
+  width: 100%;
+}
+
+#footer-brand{
+  max-height:15vw;
+}
+
+@media screen and (max-width: 785px){
+  #text-footer{
+    font-size: 2.4vw;
+  }
+
+  #footer-brand{
+    max-height:22vw;
+  }
+  
+}
+
+#footer{
+  background-color: #1E3823;
+}
+
+.media-icon{
+  width: 10%;
+  margin: 4% ; 
+}
+
 .img-identidade {
   margin-bottom: 1rem;
 }
