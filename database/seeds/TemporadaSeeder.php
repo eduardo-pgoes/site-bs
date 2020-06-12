@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Temporadas extends Seeder
+class TemporadaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -27,6 +27,15 @@ class Temporadas extends Seeder
             'data' => 'De 1 de janeiro até 32 de Dezembro',
             'classificacao' => 'Não foi realizada devido a pandemia',
             'premios' => 'time mais iludido',
+        ]);
+
+        DB::table('regionals')->insert([
+            'temporada_id' => 1,
+            'nome' => 'Rock City',
+            'local' => 'Arkansas DC.',
+            'data' => 'De 3 de Março até 7 De Abril',
+            'classificacao' => '4º Lugar na classificação geral, semifinalista',
+            'premios' => 'Semifinalista, Most Beautiful Website award',
         ]);
     }
 }

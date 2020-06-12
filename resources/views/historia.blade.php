@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <br>
-    Não implementado
-    <!--TODO implemetar-->
+    Temporada: {{$temporada}}
+    Regionais: {{$regionais}}
+    Fotos:{{$fotos}}
 @endsection

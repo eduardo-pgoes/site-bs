@@ -15,13 +15,14 @@
                     <a class="nav-link" href="{{ url('sobre') }}">Sobre</a>
                 </li>
                 <li class="nav-item dropdown">
+                    {{-- #TODO historia incompativel com ferrametas de acessibilidade  --}}
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     História
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item disabled" href="{{ url('historia/2020') }}">2020</a>
-                        <a class="dropdown-item" href="{{ url('historia/2018') }}">2018</a>
                         <a class="dropdown-item" href="{{ url('historia/2019') }}">2019</a>
+                        <a class="dropdown-item" href="{{ url('historia/2018') }}">2018</a>
                         <a class="dropdown-item" href="{{ url('historia/2017') }}">2017</a>
                 </li>
                 <li class="nav-item">

@@ -21,9 +21,7 @@ Route::get('/sobre', function () {
     return view('sobre');
 });
 
-Route::get('/historia/{ano}', function () {
-    return view('historia');
-});
+Route::get('/historia/{ano}', 'PagesController@historia');
 
 Route::get('/apoio', 'PagesController@apoio');
 

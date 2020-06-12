@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use App\Temporada;
 
 class PagesController extends Controller
 {
@@ -23,6 +24,25 @@ class PagesController extends Controller
         });
 
         return view('apoio')->with('files',$files);
+    }
+
+    public function historia($ano){
+
+        $temp = Temporada::where('ano', $ano)->first();
+        
+        $regionais = $temp->regionais()->get();
+        $fotos = $temp->temporada_fotos()->get();
+
+        Log::info($temp);
+        Log::info($regionais);
+        Log::info($fotos);
+
+        return view('historia',
+        [
+            'temporada'=> $temp,
+            'regionais' => $regionais,
+            'fotos' => $fotos,
+        ]);
     }
 }
 
