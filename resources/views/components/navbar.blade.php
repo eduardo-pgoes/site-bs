@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-color shadow-sm">
     <div class="container navbar-gambi">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="assets/logo.png" height="60">
+        <a class="navbar-brand" href="{{ url('/')  }}">
+            <img src="{{ URL::asset('assets/logo.png') }}" height="60">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
@@ -14,8 +14,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('sobre') }}">Sobre</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('historia') }}">História</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    História
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item disabled" href="{{ url('historia/2020') }}">2020</a>
+                        <a class="dropdown-item" href="{{ url('historia/2018') }}">2018</a>
+                        <a class="dropdown-item" href="{{ url('historia/2019') }}">2019</a>
+                        <a class="dropdown-item" href="{{ url('historia/2017') }}">2017</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('apoio') }}">Apoio</a>

@@ -21,7 +21,7 @@ Route::get('/sobre', function () {
     return view('sobre');
 });
 
-Route::get('/historia', function () {
+Route::get('/historia/{ano}', function () {
     return view('historia');
 });
 
