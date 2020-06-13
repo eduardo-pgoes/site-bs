@@ -13,7 +13,7 @@ class TemporadaSeeder extends Seeder
     {
         DB::table('temporadas')->insert([
             'nome' => 'Deep Space',
-            'video_url' => 'https://www.youtube.com/watch?v=Mew6G_og-PI',
+            'video_url' => 'https://www.youtube.com/embed/Mew6G_og-PI',
             'descricao' => 'Descrição Aqui viu',
             'robo_desc' => 'Aqui é a Descrição do robô viu',
             'robo_foto' => 'path da foto',
