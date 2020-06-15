@@ -25,8 +25,9 @@ Route::get('/historia/{ano}', 'PagesController@historia');
 
 Route::get('/apoio', 'PagesController@apoio');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
+Route::get('/blog', 'PagesController@blog');
+
+
+Route::get('/dashboard/{area}','PagesController@dashboard')->middleware('auth');
 
 Auth::routes();

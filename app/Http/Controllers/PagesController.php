@@ -44,6 +44,20 @@ class PagesController extends Controller
             'fotos' => $fotos,
         ]);
     }
+
+    public function dashboard($area)
+    {
+        if ($area == 'historia') {
+            return view('historia-dashboard');
+        }
+        else if ($area == 'blog') {
+            return view('blog-dashboard');
+        }
+    }
+
+    public function blog(){
+        return view('blog');
+    }
 }
 
 
