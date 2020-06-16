@@ -91,73 +91,146 @@
                             </div>
                         </div> 
                     @if(empty($temporadaAtual ?? ''))
-                        <div class="row justify-content-center">
-                            <button class="btn btn-success" type="submit"> Cadastrar</button>
-                        </div>
-                    </form>
-                    @else
-                        <div class="row justify-content-center">
-                            <div class="col">
-                                <button class="btn  btn-info" type="submit"> Alterar</button>
+                            <div class="row justify-content-center">
+                                <button class="btn btn-success" type="submit"> Cadastrar</button>
                             </div>
-                    </form>
-                    
-                        <div class="col">
-                            <form action="temporada/{{$temporadaAtual->id ?? ''}}" method="post">
-                                @method('DELETE')
-                                @csrf
-                                <button class="btn btn-danger" type="submit"> Excluir</button>
-                            </form>
-                        </div>
+                        </form>
+                    @else
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <button class="btn  btn-info" type="submit"> Alterar</button>
+                                </div>
+                        </form>                    
+                            <div class="col-3">
+                                <form action="temporada/{{$temporadaAtual->id ?? ''}}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger" type="submit"> Excluir</button>
+                                </form>
+                            </div>
                     </div>
+                    @endif
+                    
 
+                    @if(!empty($temporadaAtual))
+                        <hr>
+                        <h3>Regional</h3>
+                        @foreach($regionais as $regional)
+                            <form action="regional/{{$regional->id}}" method="post">
+                                @method('PUT')
+                                @csrf
+                                <div class="row justify-content-start">
+                                    <div class="col-2">Nome</div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <input name="nome" value="{{$regional->nome}}" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-2">Local</div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <input name="local" value="{{$regional->local}}" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-2">Data</div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <input name="data" value="{{$regional->data}}" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-2">Classificação</div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <input name="classificacao" value="{{$regional->classificacao}}" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-2">Prêmios</div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <input name="premios" value="{{$regional->premios}}" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-3">
+                                        <button class="btn btn-info">
+                                            Alterar
+                                        </button>
+                                    </div>
+                            </form>
+                                    <div class="col-3">
+                                        <form action="regional/{{$regional->id}}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="btn btn-danger">
+                                                Remover 
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                        @endforeach
+
+                        <form action="regional/" method="post">
+                            @csrf
+                            <input type="hidden" name="temporada_id" value="{{ $temporadaAtual->id }}">
+                            <div class="row justify-content-start">
+                                <div class="col-2">Nome</div>
+                                <div class="col-3">
+                                    <div class="input-group">
+                                        <input name="nome" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-2">Local</div>
+                                <div class="col-3">
+                                    <div class="input-group">
+                                        <input name="local" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-2">Data</div>
+                                <div class="col-3">
+                                    <div class="input-group">
+                                        <input name="data" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-2">Classificação</div>
+                                <div class="col-3">
+                                    <div class="input-group">
+                                        <input name="classificacao" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-2">Prêmios</div>
+                                <div class="col-3">
+                                    <div class="input-group">
+                                        <input name="premios" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <button class="btn btn-success">
+                                    Cadastrar
+                                </button>
+                            </div>
+                        </form>
                     @endif
 
-                    <hr>
-                    <h3>Regional</h3>
-                    <form action="historia/temporada" method="post">
-                        @csrf
-                        <div class="row justify-content-start">
-                            <div class="col-2">Nome</div>
-                            <div class="col-3">
-                                <div class="input-group">
-                                    <input id="" name="" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start">
-                            <div class="col-2">Local</div>
-                            <div class="col-3">
-                                <div class="input-group">
-                                    <input id="" name="" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start">
-                            <div class="col-2">Data</div>
-                            <div class="col-3">
-                                <div class="input-group">
-                                    <input id="" name="" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start">
-                            <div class="col-2">Classificação</div>
-                            <div class="col-3">
-                                <div class="input-group">
-                                    <input id="" name="" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-start">
-                            <div class="col-2">Prêmios</div>
-                            <div class="col-3">
-                                <div class="input-group">
-                                    <input id="" name="" type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+
+                    @if(!empty($temporadaAtual))
                     <hr>
                     <h3>Fotos</h3>
                     <div>
@@ -166,6 +239,7 @@
                             <label class="custom-file-label" for="inputGroupFile01">Nova Foto</label>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

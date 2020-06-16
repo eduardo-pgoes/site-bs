@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Regional;
+use App\Temporada;
+
 use Illuminate\Http\Request;
 
 class RegionalController extends Controller
@@ -16,7 +18,18 @@ class RegionalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $regional = new Regional();
+
+        $regional->temporada_id = $request['temporada_id'];
+        $regional->nome = $request['nome'];
+        $regional->local = $request['local'];
+        $regional->data = $request['data'];
+        $regional->classificacao = $request['classificacao'];
+        $regional->premios = $request['premios'];
+
+        $regional->save();
+
+        return back();
     }
 
     /**
@@ -28,7 +41,15 @@ class RegionalController extends Controller
      */
     public function update(Request $request, Regional $regional)
     {
-        //
+        $regional->nome = $request['nome'];
+        $regional->local = $request['local'];
+        $regional->data = $request['data'];
+        $regional->classificacao = $request['classificacao'];
+        $regional->premios = $request['premios'];
+
+        $regional->save();
+
+        return back();
     }
 
     /**
@@ -39,6 +60,9 @@ class RegionalController extends Controller
      */
     public function destroy(Regional $regional)
     {
-        //
+        $ano = Temporada::where('id',$regional->temporada_id)->first()->ano;
+        $regional->delete();
+
+        return redirect('/dashboard/historia/'.$ano);
     }
 }

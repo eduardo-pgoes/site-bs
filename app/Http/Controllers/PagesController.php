@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Temporada;
 
+
 class PagesController extends Controller
 {
     
@@ -43,19 +44,16 @@ class PagesController extends Controller
 
     public function dashHistoria($ano = null)
     {
-        $temporadas = Temporada::get()->sort()->reverse();
-
         $temporadaAtual = Temporada::where('ano',$ano)->first();
 
         if(!isset($temporadaAtual))
-            return view('historia-dashboard',['temporadas'=>$temporadas]);
+            return view('historia-dashboard');
         else{
 
-            $regionais = $temporadaAtual->regionais();
-            $fotos = $temporadaAtual->temporada_fotos();
+            $regionais = $temporadaAtual->regionais()->get();
+            $fotos = $temporadaAtual->temporada_fotos()->get();
 
             return view('historia-dashboard',[
-                'temporadas' => $temporadas,
                 'temporadaAtual' => $temporadaAtual,
                 'regionais' => $regionais,
                 'fotos' => $fotos,
