@@ -35,7 +35,7 @@
         </h2>
         <div class='row'>
             <div class='col-sm-6'>
-                <img src="{{ URL::asset('storage/'.$temporada->robo_foto) }}" alt="Foto de exibição do Robô">
+                <img style="width:100%" src="{{ URL::asset('storage/'.$temporada->robo_foto) }}" alt="Foto de exibição do Robô">
             </div>
             <div class='col-sm-6'>
                 <h5>
@@ -44,49 +44,55 @@
             </div>
         </div>  
     </div>
-    <div style="margin: 2rem 0">
-        <div class="container">            
-            <h2>
-                Competições
-            </h2>
-            @foreach($regionais as $regional)
-                <h5>
-                    {{ $regional->nome }}
-                </h5>
-                <ul class="unstyled">
-                    <li>{{ $regional->local }}</li>
-                    <li>{{ $regional->data }}</li>
-                    <li>{{ $regional->classificacao }}</li>
-                    @empty($regional->premios)
-                        <li>{{ $regional->premios }}</li>
-                    @endempty
-                </ul>
+     
+    @if(isset($regionais[0]))  
+        <div style="margin: 2rem 0">
+            <div class="container">         
+                    <h2>
+                        Competições
+                    </h2>
+                @foreach($regionais as $regional)
+                    <h5>
+                        {{ $regional->nome }}
+                    </h5>
+                    <ul class="unstyled">
+                        <li>{{ $regional->local }}</li>
+                        <li>{{ $regional->data }}</li>
+                        <li>{{ $regional->classificacao }}</li>
+                        @empty($regional->premios)
+                            <li>{{ $regional->premios }}</li>
+                        @endempty
+                    </ul>
 
-                @if(!$loop->last)
-                    <hr>
-                @endif
-            @endforeach
+                    @if(!$loop->last)
+                        <hr>
+                    @endif
+                @endforeach
+            </div>
         </div>
-    </div>
-    @empty($fotos)
+    @endif
+    @if(isset($fotos[0]))
         <div class="jumbotron">
+            <h2>
+                Fotos
+            </h2>
             @foreach ($fotos as $foto)
                 @if($loop->index%3 == 0)
                 <div class="row justify-content-center">
                     <div class="col-4">
-                        <img src="{{ $foto->caminho }}" alt="Foto da temporada">
+                        <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
                     </div>
-                @elseif($loop->index%3 == 1))
+                @elseif($loop->index%3 == 1)
                     <div class="col-4">
-                        <img src="{{ $foto->caminho }}" alt="Foto da temporada">
+                        <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
                     </div>
                 @else
                     <div class="col-4">
-                        <img src="{{ $foto->caminho }}" alt="Foto da temporada">
+                        <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
                     </div>
                 </div>
                 @endif
             @endforeach
         </div>
-    @endempty
+    @endif
 @endsection

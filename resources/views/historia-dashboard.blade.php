@@ -231,14 +231,64 @@
 
 
                     @if(!empty($temporadaAtual))
-                    <hr>
-                    <h3>Fotos</h3>
-                    <div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" >
-                            <label class="custom-file-label" for="inputGroupFile01">Nova Foto</label>
+                        <hr>
+                        <h3>Fotos</h3>
+                        <div class="container">
+                            @foreach($fotos as $foto)
+
+                                @if($loop->odd)
+                                    <div class="row justify-content-around">
+                                        <div class="col-5">
+                                            <img style="width:100%" src="{{url('storage/'.$foto->caminho)}}" 
+                                                alt="foto da temporada">
+                                            <form action="foto/{{$foto->id}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger">
+                                                    Remover
+                                                </button>                                                
+                                            </form>
+                                        </div>
+                                    @if($loop->last)
+                                    </div>
+                                    @endif
+                                @else
+                                        <div class="col-5">
+                                            <img style="width:100%" src="{{url('storage/'.$foto->caminho)}}"
+                                                alt="foto da temporada">
+                                            <form action="foto/{{$foto->id}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger">
+                                                    Remover
+                                                </button>                                                
+                                            </form>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+
+
+                            <form action="foto/" method="post" enctype="multipart/form-data">
+                                @csrf
+                                
+                                <input type="hidden" name="temporada_id" value="{{ $temporadaAtual->id }}">
+
+                                <div class="row justify-content-center">
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <input name="foto" type="file">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-success">
+                                            Adicionar
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </form>
                         </div>
-                    </div>
                     @endif
                 </div>
             </div>

@@ -29,7 +29,7 @@ class TemporadaController extends Controller
         $temporada->descricao = $request['descricao'];
         $temporada->robo_desc = $request['robo_desc'];
 
-        $path = $request->file('robo_foto')->store('public/robo_fotos');
+        $path = $request->file('robo_foto')->store('robo_fotos',['disk'=>'public']);
 
         $temporada->robo_foto = $path;
 
@@ -76,6 +76,8 @@ class TemporadaController extends Controller
      */
     public function destroy(Temporada $temporada)
     {
+        #TODO remover todas as fotos associadas do storage
+        
         Storage::delete($temporada->robo_foto);
 
         $temporada->delete();
