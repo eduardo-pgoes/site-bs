@@ -4,8 +4,10 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class navbar extends Component
+
+class Navbar extends Component
 {
+
     /**
      * Create a new component instance.
      *
@@ -13,9 +15,9 @@ class navbar extends Component
      */
     public function __construct()
     {
-        //
+       //        
     }
-
+    
     /**
      * Get the view / contents that represent the component.
      *

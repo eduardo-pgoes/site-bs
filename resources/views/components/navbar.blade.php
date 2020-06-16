@@ -20,10 +20,9 @@
                     História
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item disabled" href="{{ url('historia/2020') }}">2020</a>
-                        <a class="dropdown-item" href="{{ url('historia/2019') }}">2019</a>
-                        <a class="dropdown-item" href="{{ url('historia/2018') }}">2018</a>
-                        <a class="dropdown-item" href="{{ url('historia/2017') }}">2017</a>
+                        @foreach($anos as $ano)
+                            <a class="dropdown-item" href="{{ url('historia/'.$ano) }}">{{$ano}}</a>
+                        @endforeach
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('apoio') }}">Apoio</a>

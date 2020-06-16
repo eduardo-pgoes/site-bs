@@ -24,7 +24,7 @@ class CreateRegionalsTable extends Migration
             $table->string('premios')->nullable();
             $table->timestamps();
             
-            $table->foreign('temporada_id')->references('id')->on('temporadas');
+            $table->foreign('temporada_id')->references('id')->on('temporadas')->onDelete('cascade');
         });
     }
 

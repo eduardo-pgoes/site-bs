@@ -17,10 +17,10 @@ class CreateTemporadasTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('video_url')->nullable();
-            $table->string('descricao');
-            $table->string('robo_desc');
+            $table->longText('descricao');
+            $table->longText('robo_desc');
             $table->string('robo_foto')->nullable();
-            $table->year('Ano')->unique();
+            $table->year('ano')->unique();
             $table->timestamps();
         });
     }

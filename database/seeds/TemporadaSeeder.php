@@ -16,7 +16,7 @@ class TemporadaSeeder extends Seeder
             'video_url' => 'https://www.youtube.com/embed/Mew6G_og-PI',
             'descricao' => 'Descrição Aqui viu',
             'robo_desc' => 'Aqui é a Descrição do robô viu',
-            'robo_foto' => 'path da foto',
+            'robo_foto' => 'robo_fotos/WaCW8MJ8n5OF2CeWF2rBbIaiCJ44y4DtPC0O1oM1.jpeg',
             'Ano' => '2019',
         ]);
 

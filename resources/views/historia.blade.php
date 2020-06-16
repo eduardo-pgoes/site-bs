@@ -35,8 +35,7 @@
         </h2>
         <div class='row'>
             <div class='col-sm-6'>
-                {{-- <img src="{{ $temporada->robo_foto }}" alt="Foto de exibição do Robô"> --}}
-                <img src="{{ URL::asset('assets/icons/astronomy.png') }}" alt="Foto de exibição do Robô">
+                <img src="{{ URL::asset('storage/'.$temporada->robo_foto) }}" alt="Foto de exibição do Robô">
             </div>
             <div class='col-sm-6'>
                 <h5>

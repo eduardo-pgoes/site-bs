@@ -21,13 +21,25 @@ Route::get('/sobre', function () {
     return view('sobre');
 });
 
-Route::get('/historia/{ano}', 'PagesController@historia');
+
+
+Route::get('historia/{ano}', 'PagesController@historia');
+
+Route::middleware('auth')->prefix('dashboard/historia')->group(function (){
+
+    Route::get('/{ano?}','PagesController@dashHistoria');
+
+    Route::resource('temporada', 'TemporadaController');
+
+    Route::resource('regional', 'RegionalController');
+
+    Route::resource('foto', 'TemporadaFotoController');
+});
+
 
 Route::get('/apoio', 'PagesController@apoio');
 
 Route::get('/blog', 'PagesController@blog');
 
-
-Route::get('/dashboard/{area}','PagesController@dashboard')->middleware('auth');
 
 Auth::routes();

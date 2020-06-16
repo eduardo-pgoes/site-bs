@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Log;
+
 use App\Temporada;
 
 class PagesController extends Controller
@@ -33,10 +33,6 @@ class PagesController extends Controller
         $regionais = $temp->regionais()->get();
         $fotos = $temp->temporada_fotos()->get();
 
-        Log::info($temp);
-        Log::info($regionais);
-        Log::info($fotos);
-
         return view('historia',
         [
             'temporada'=> $temp,
@@ -45,14 +41,27 @@ class PagesController extends Controller
         ]);
     }
 
-    public function dashboard($area)
+    public function dashHistoria($ano = null)
     {
-        if ($area == 'historia') {
-            return view('historia-dashboard');
+        $temporadas = Temporada::get()->sort()->reverse();
+
+        $temporadaAtual = Temporada::where('ano',$ano)->first();
+
+        if(!isset($temporadaAtual))
+            return view('historia-dashboard',['temporadas'=>$temporadas]);
+        else{
+
+            $regionais = $temporadaAtual->regionais();
+            $fotos = $temporadaAtual->temporada_fotos();
+
+            return view('historia-dashboard',[
+                'temporadas' => $temporadas,
+                'temporadaAtual' => $temporadaAtual,
+                'regionais' => $regionais,
+                'fotos' => $fotos,
+                ]);
         }
-        else if ($area == 'blog') {
-            return view('blog-dashboard');
-        }
+    
     }
 
     public function blog(){
