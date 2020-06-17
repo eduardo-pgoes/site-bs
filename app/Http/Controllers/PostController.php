@@ -35,7 +35,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+
+        $post->titulo = $request['titulo'];
+        $post->conteudo = $request['conteudo'];
+        $post->post_foto = $request['post_foto'];
+        $post->url = $request['url'];
+
+        $post->save();
+
+        return back();
     }
 
     /**
@@ -69,7 +78,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->titulo = $request['titulo'];
+        $post->conteudo = $request['conteudo'];
+        $post->post_foto = $request['post_foto'];
+        $post->url = $request['url'];
+
+        $post->save();
+
+        return back();
     }
 
     /**
@@ -80,6 +96,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect('/dashboard/blog');
     }
 }

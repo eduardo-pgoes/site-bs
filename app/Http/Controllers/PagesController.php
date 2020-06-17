@@ -76,7 +76,7 @@ class PagesController extends Controller
             return view('post', ['post' => $post]);
         }
         else {
-            return view('404');
+            abort(404);
         }
     }
 }
