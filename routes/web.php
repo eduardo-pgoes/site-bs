@@ -25,6 +25,8 @@ Route::get('/sobre', function () {
 
 Route::get('historia/{ano}', 'PagesController@historia');
 
+Route::get('blog/{url}', 'PagesController@post');
+
 Route::middleware('auth')->prefix('dashboard/historia')->group(function (){
 
     Route::get('/{ano?}','PagesController@dashHistoria');

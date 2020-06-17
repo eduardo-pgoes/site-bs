@@ -63,10 +63,21 @@ class PagesController extends Controller
     
     }
 
-    public function blog(){
-        $posts = Post::get()->sort()->reverse();
+    public function blog() {
+        $posts = Post::get()->sort();
 
         return view('blog', ['posts' => $posts]);
+    }
+
+    public function post($url) {
+        $post = Post::where('url',$url)->first();
+
+        if ($post) {
+            return view('post', ['post' => $post]);
+        }
+        else {
+            return view('404');
+        }
     }
 }
 
