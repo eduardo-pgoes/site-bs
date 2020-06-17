@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Temporada;
+use App\Post;
 
 
 class PagesController extends Controller
@@ -63,7 +64,9 @@ class PagesController extends Controller
     }
 
     public function blog(){
-        return view('blog');
+        $posts = Post::get()->sort()->reverse();
+
+        return view('blog', ['posts' => $posts]);
     }
 }
 

@@ -19,7 +19,7 @@ class PostSeeder extends Seeder
         ]);
 
         DB::table('post_fotos')->insert([
-            'post_id' => '0',
+            'post_id' => 1,
             'caminho' => 'post_fotos/offseason.jpeg',
         ]);
     }

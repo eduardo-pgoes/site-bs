@@ -1,11 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <br>
-
-    Não implementado
-    <!--TODO implemetar-->
+    @foreach ($posts as $post)
+        {{ $post->titulo }}
+    @endforeach
 @endsection
