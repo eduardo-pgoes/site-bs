@@ -59,9 +59,9 @@
                         <li>{{ $regional->local }}</li>
                         <li>{{ $regional->data }}</li>
                         <li>{{ $regional->classificacao }}</li>
-                        @empty($regional->premios)
+                        @if(!empty($regional->premios))
                             <li>{{ $regional->premios }}</li>
-                        @endempty
+                        @endif
                     </ul>
 
                     @if(!$loop->last)
