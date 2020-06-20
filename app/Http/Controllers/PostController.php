@@ -2,30 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+use App\Post;
+
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,34 +23,15 @@ class PostController extends Controller
 
         $post->titulo = $request['titulo'];
         $post->conteudo = $request['conteudo'];
-        $post->post_foto = $request['post_foto'];
         $post->url = $request['url'];
+        $post->resenha = $request['resenha'];
+
+        $path = $request->file('post_foto')->store('temporada_fotos',['disk'=>'public']);
+        $post->post_foto = $path;
 
         $post->save();
 
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
-    {
-        //
     }
 
     /**
@@ -80,8 +45,17 @@ class PostController extends Controller
     {
         $post->titulo = $request['titulo'];
         $post->conteudo = $request['conteudo'];
-        $post->post_foto = $request['post_foto'];
         $post->url = $request['url'];
+        $post->resenha = $request['resenha'];
+
+        if(isset($request['post_foto'])){
+
+            Storage::delete($post->post_foto);
+
+            $path = $request->file('post_foto')->store('temporada_fotos',['disk'=>'public']);
+
+            $post->post_foto = $path;
+        }
 
         $post->save();
 
@@ -96,7 +70,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        Storage::delete($post->post_foto);
+
         $post->delete();
+        
         return redirect('/dashboard/blog');
     }
 }

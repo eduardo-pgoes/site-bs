@@ -21,11 +21,14 @@ Route::get('/sobre', function () {
     return view('sobre');
 });
 
+Route::get('/apoio', 'PagesController@apoio');
 
+Route::get('/blog', 'PagesController@blog');
 
 Route::get('historia/{ano}', 'PagesController@historia');
 
 Route::get('blog/{url}', 'PagesController@post');
+
 
 Route::middleware('auth')->prefix('dashboard/historia')->group(function (){
 
@@ -38,10 +41,16 @@ Route::middleware('auth')->prefix('dashboard/historia')->group(function (){
     Route::resource('foto', 'TemporadaFotoController');
 });
 
+Route::middleware('auth')->prefix('dashboard/blog')->group(function (){
 
-Route::get('/apoio', 'PagesController@apoio');
+    Route::get('/{url?}','PagesController@dashBlog');
 
-Route::get('/blog', 'PagesController@blog');
+    Route::resource('post', 'PostController');
+
+    Route::resource('foto', 'PostFotoController');
+});
+
+
 
 
 Auth::routes();

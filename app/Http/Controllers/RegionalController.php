@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 use App\Regional;
 use App\Temporada;
 
-use Illuminate\Http\Request;
 
 class RegionalController extends Controller
 {

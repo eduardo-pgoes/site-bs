@@ -1,29 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
 
-    <x-front-banner 
-        title="Dashboard" 
-        content="Controle e configuração do Site"
-        bg_style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%,rgba(50,91,57,0.8) 100%),
-        url('{{ asset('assets/homebanner.jpg')}}');"/>
-        
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col" style="text-align:center;">
-                <a  style="font-size:2rem; color:black; text-decoration:none;"
-                    href="{{ url('dashboard/blog') }}">
-                        Blog
-                </a>
-            </div>
-            <div class="col" style="text-align:center;">
-                <a  style="font-size:2rem; color:black; text-decoration:none;" 
-                    href="{{ url('dashboard/historia') }}">
-                        História
-                </a>            
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-2" style="max-height:300px; overflow-y:scroll;">

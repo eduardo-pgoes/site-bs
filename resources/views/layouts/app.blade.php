@@ -22,14 +22,12 @@
 <body>
     <div id="app">
         
-        <x-navbar/>
         <main>
-            <div style="margin-top:60px">
-                @yield('content')
+            <div>
+                @yield('layout')
             </div>
         </main>
-        <x-footer/>
-        
+
     </div>
 </body>
 </html>

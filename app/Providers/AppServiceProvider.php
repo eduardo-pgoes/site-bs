@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
 use App\Temporada;
+use App\Post;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,7 +31,9 @@ class AppServiceProvider extends ServiceProvider
         {
            return $item->ano;
         })->sort()->reverse();
-
         View::share('anos', $anos);
+
+        $posts = Post::get();
+        View::share('posts', $posts);
     }
 }

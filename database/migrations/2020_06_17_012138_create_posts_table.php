@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->longText('conteudo');
             $table->string('post_foto');
             $table->string('titulo');
+            $table->string('resenha');
             $table->string('url')->unique();
             $table->timestamps();
         });

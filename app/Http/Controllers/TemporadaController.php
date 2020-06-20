@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Temporada;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
+use App\Temporada;
 
 
 class TemporadaController extends Controller
@@ -81,7 +82,6 @@ class TemporadaController extends Controller
         Storage::delete($temporada->robo_foto);
 
         $temporada->delete();
-
         return redirect('/dashboard/historia');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.basic')
 
 @section('content')
     <x-front-banner title="Blog" content="Conheça um pouco mais sobre o nosso time!"
@@ -12,10 +12,10 @@
                 <div class="row align-items-center top-buffer">
                     <div class="col-4 d-flex">
                     <div class="card shadow-sm w-75 flex-fill" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ url('assets/'.$post->post_foto) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ URL::asset('storage/'.$post->post_foto) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title font-weight-bold">{{$post->titulo}}</h5>
-                            <p class="card-text">{{$post->conteudo}}</p>
+                            <p class="card-text">{{$post->resenha}}</p>
                             <a href="/blog/{{ $post->url}}" class="btn btn-primary stretched-link btn-success">Veja o post!</a>
                         </div>
                     </div>
@@ -23,10 +23,10 @@
             @elseif($loop->index%3 == 1)
                 <div class="col-4 d-flex">
                     <div class="card shadow-sm w-75 flex-fill" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ url('assets/'.$post->post_foto) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ URL::asset('storage/'.$post->post_foto) }}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title font-weight-bold">{{$post->titulo}}</h5>
-                                <p class="card-text">{{$post->conteudo}}</p>
+                                <p class="card-text">{{$post->resenha}}</p>
                                 <a href="/blog/{{ $post->url}}" class="btn btn-primary stretched-link btn-success">Veja o post!</a>
                             </div>
                     </div>
@@ -34,10 +34,10 @@
             @else
                 <div class="col-4 d-flex">
                     <div class="card shadow-sm w-75 flex-fill" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ url('assets/'.$post->post_foto) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ URL::asset('storage/'.$post->post_foto) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title font-weight-bold">{{$post->titulo}}</h5>
-                            <p class="card-text">{{$post->conteudo}}</p>
+                            <p class="card-text">{{$post->resenha}}</p>
                             <a href="/blog/{{ $post->url}}" class="btn btn-primary stretched-link btn-success">Veja o post!</a>
                         </div>
                     </div>

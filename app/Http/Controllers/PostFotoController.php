@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
-use App\Temporada_Foto;
-use App\Temporada;
+use App\PostFoto;
+use App\Post;
 
 
-class TemporadaFotoController extends Controller
+class PostFotoController extends Controller
 {
 
     /**
@@ -20,11 +20,11 @@ class TemporadaFotoController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('foto')->store('temporada_fotos',['disk'=>'public']);
+        $path = $request->file('foto')->store('Post_fotos',['disk'=>'public']);
                 
-        $foto = new Temporada_Foto();
+        $foto = new PostFoto();
 
-        $foto->temporada_id = $request['temporada_id'];
+        $foto->Post_id = $request['Post_id'];
         $foto->caminho = $path;
 
         $foto->save();
@@ -35,20 +35,20 @@ class TemporadaFotoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Temporada_Foto  $temporada_Foto
+     * @param  \App\PostFoto  $PostFoto
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         #FIXME laravel não consegue injetar pelo id
 
-        $temporada_Foto = Temporada_Foto::where('id',$id)->first();
+        $PostFoto = PostFoto::where('id',$id)->first();
 
-        Storage::delete($temporada_Foto->caminho);
-        $ano = Temporada::where('id',$temporada_Foto->temporada_id)->first()->ano;
+        Storage::delete($PostFoto->caminho);
+        $url = Post::where('id',$PostFoto->Post_id)->first()->url;
                 
-        $temporada_Foto->delete();
+        $PostFoto->delete();
 
-        return redirect('/dashboard/historia/'.$ano);
+        return redirect('/dashboard/historia/'.$url);
     }
 }

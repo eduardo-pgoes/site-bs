@@ -48,19 +48,36 @@ class PagesController extends Controller
         $temporadaAtual = Temporada::where('ano',$ano)->first();
 
         if(!isset($temporadaAtual))
-            return view('historia-dashboard');
+            return view('dashboard.historia');
         else{
 
             $regionais = $temporadaAtual->regionais()->get();
             $fotos = $temporadaAtual->temporada_fotos()->get();
 
-            return view('historia-dashboard',[
+            return view('dashboard.historia',[
                 'temporadaAtual' => $temporadaAtual,
                 'regionais' => $regionais,
                 'fotos' => $fotos,
                 ]);
         }
     
+    } 
+    
+    public function dashBlog($url = null)
+    {
+        $postAtual = Post::where('url',$url)->first();
+
+        if(!isset($postAtual))
+            return view('dashboard.blog');
+        else{
+
+            $fotos = $postAtual->post_fotos()->get();
+
+            return view('dashboard.blog',[
+                'postAtual' => $postAtual,
+                'fotos' => $fotos,
+                ]);
+        }
     }
 
     public function blog() {

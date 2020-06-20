@@ -18,7 +18,7 @@ class CreatePostFotosTable extends Migration
             $table->unsignedBigInteger('post_id');
             $table->string('caminho');
             $table->timestamps();
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
