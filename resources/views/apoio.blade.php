@@ -12,33 +12,29 @@
 
             </p> 
             <div>               
-                @foreach ($files as $file)
+                @foreach ($apoiadores as $apoiador)
                     @if($loop->last)
                         @if ($loop->odd)
-                            <div class="row justify-content-md-center align-items-center" style="margin:25px 0" >
-                                <div class="col">
-                                    <img src = "{{$file}}" style="max-width:45%; max-height:100%; " >
+                            <div class="row justify-content-around" style="margin:25px 0" >
+                                <div class="col-5">
+                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
                                 </div>
                             </div>
-                        @endif
-
-                        @if ($loop->even)
-                                <div class="col">
-                                    <img src = "{{$file}}" style="max-width:90%; max-height:100%; " >
+                        @else
+                                <div class="col-5">
+                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
                                 </div>
                             </div>
                         @endif
                     @else
                         @if ($loop->odd)
-                            <div class="row justify-content-md-center align-items-center" style="margin:25px 0" >
-                                <div class="col">
-                                    <img src = "{{$file}}" style="max-width:90%; max-height:100%; " >
-                             </div>
-                        @endif
-
-                        @if ($loop->even)
-                                <div class="col">
-                                    <img src = "{{$file}}" style="max-width:90%; max-height:100%; " >
+                            <div class="row justify-content-around" style="margin:25px 0" >
+                                <div class="col-5">
+                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
+                                </div>
+                        @else
+                                <div class="col-5">
+                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
                                 </div>
                             </div>
                         @endif
@@ -58,7 +54,7 @@
                 gestão financeira e do planejamento das atividades educacionais 
                 e comunitárias da equipe. 
             </p> 
-            <img src = "storage/apoio/AJAPET.png" style="width:80%" >
+            <img src = "{{ URL::asset('assets/AJAPET.png') }}" style="width:80%" >
         </div>
     </div>    
 @endsection

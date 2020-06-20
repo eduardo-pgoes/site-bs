@@ -24,7 +24,7 @@
             </div>
             <div class="col" style="text-align:center;">
                 <a  style="font-size:2rem; color:black; text-decoration:none;" 
-                    href="{{ url('dashboard/Apoio') }}">
+                    href="{{ url('dashboard/apoio') }}">
                         Apoiadores
                 </a>            
             </div>

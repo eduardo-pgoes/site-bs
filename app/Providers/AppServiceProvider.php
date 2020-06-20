@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 
 use App\Temporada;
 use App\Post;
+use App\Apoiador;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,5 +36,8 @@ class AppServiceProvider extends ServiceProvider
 
         $posts = Post::get();
         View::share('posts', $posts);
+
+        $apoiadores = Apoiador::get();
+        View::share('apoiadores', $apoiadores);
     }
 }

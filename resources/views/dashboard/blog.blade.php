@@ -83,7 +83,8 @@
                     </div>
                     @endif
                     
-
+                    {{--
+                    TODO verificar a necessidade de upload de fotos
                     @if(!empty($postAtual))
                         <hr>
                         <h3>Fotos</h3>
@@ -143,6 +144,8 @@
                             </form>
                         </div>
                     @endif
+                    --}}
+
                 </div>
             </div>
         </div>

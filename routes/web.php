@@ -32,7 +32,7 @@ Route::get('blog/{url}', 'PagesController@post');
 
 Route::middleware('auth')->prefix('dashboard/historia')->group(function (){
 
-    Route::get('/{ano?}','PagesController@dashHistoria');
+    Route::get('/{ano?}','DashboardController@Historia');
 
     Route::resource('temporada', 'TemporadaController');
 
@@ -43,11 +43,18 @@ Route::middleware('auth')->prefix('dashboard/historia')->group(function (){
 
 Route::middleware('auth')->prefix('dashboard/blog')->group(function (){
 
-    Route::get('/{url?}','PagesController@dashBlog');
+    Route::get('/{url?}','DashboardController@Blog');
 
     Route::resource('post', 'PostController');
 
     Route::resource('foto', 'PostFotoController');
+});
+
+Route::middleware('auth')->prefix('dashboard/apoio')->group(function (){
+
+    Route::get('/{id?}','DashboardController@Apoio');
+
+    Route::resource('apoiador', 'ApoiadorController');
 });
 
 
