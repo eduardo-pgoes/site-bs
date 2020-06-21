@@ -12,7 +12,7 @@
             <div class="col-sm">
                 <img src="{{URL::asset('assets/premios/croppedWoodie.png')}}"/>
             </div>
-        </div>
+        </div> 
         <div class="row">
             <div class="col-sm">
                 <img src="{{URL::asset('assets/premios/croppedGP.png')}}"/>

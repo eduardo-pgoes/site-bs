@@ -1,40 +1,55 @@
 @extends('layouts.basic')
 
 @section('content')
+    <x-front-banner style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%, 
+        rgba(50,91,57,0.8) 100%), url('{{ asset('assets/homebanner.jpg')}}');">    
+    
+        <x-slot name="titulo"> Apoio </x-slot> 
+        Sem nossos apoiadores, nada seria possível.                
+    </x-front-banner>
+
     <div class="container text-center" style="padding-top:15px">
-
-        <h1>Apoio</h1>
         <div style="margin: 30px 0px;">
-            <p class="text-justify" style="padding:5px">
-                Sem nossos patrocinadores, nada seria possível.
-                Cada um deles nos ajuda de uma forma e o conjunto de suas ações
-                é de extrema importância para nossas atividades.
-
-            </p> 
             <div>               
                 @foreach ($apoiadores as $apoiador)
                     @if($loop->last)
                         @if ($loop->odd)
-                            <div class="row justify-content-around" style="margin:25px 0" >
+                            <div class="row justify-content-around align-items-center" style="margin:25px 0" >
                                 <div class="col-5">
                                     <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
+                                    <x-modal :id="$loop->index" >
+                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
+                                        {{$apoiador->sobre}}
+                                    </x-modal>
                                 </div>
                             </div>
                         @else
                                 <div class="col-5">
                                     <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
+                                    <x-modal :id="$loop->index" >
+                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
+                                        {{$apoiador->sobre}}
+                                    </x-modal>
                                 </div>
                             </div>
                         @endif
                     @else
                         @if ($loop->odd)
-                            <div class="row justify-content-around" style="margin:25px 0" >
+                            <div class="row justify-content-around align-items-center" style="margin:25px 0" >
                                 <div class="col-5">
                                     <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
+                                    <x-modal :id="$loop->index" >
+                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
+                                        {{$apoiador->sobre}}
+                                    </x-modal>
                                 </div>
                         @else
                                 <div class="col-5">
                                     <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
+                                    <x-modal :id="$loop->index" >
+                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
+                                        {{$apoiador->sobre}}
+                                    </x-modal>
                                 </div>
                             </div>
                         @endif

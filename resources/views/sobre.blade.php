@@ -1,11 +1,12 @@
 @extends('layouts.basic')
 
-@section('content')
-    <x-front-banner title="Sobre nós" 
-        content="Conheça um pouco mais do nosso trabalho" 
-        bg_style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%, 
-        rgba(50,91,57,0.8) 100%),
-        url('{{ asset('assets/homebanner.jpg')}}');"/>
+@section('content')    
+    <x-front-banner style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%, 
+        rgba(50,91,57,0.8) 100%), url('{{ asset('assets/homebanner.jpg')}}');">    
+    
+        <x-slot name="titulo"> Sobre nós</x-slot> 
+        Conheça um pouco mais do nosso trabalho
+    </x-front-banner>
 
     <div style="margin-top: 2rem">
         <x-right-media-panel title="Nossa equipe" content="O Brazilian Storm é um time de robótica sediado na Escola Estadual Prof Alceu Maynard Araújo, uma escola pública de São José dos Campos. 

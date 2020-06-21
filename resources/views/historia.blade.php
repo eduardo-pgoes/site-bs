@@ -1,12 +1,11 @@
 @extends('layouts.basic')
 
 @section('content')
-
-    <x-front-banner 
-        :title="$temporada->nome" 
-        content=""
-        bg_style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%, rgba(50,91,57,0.8) 100%),
-        url('{{ asset('assets/homebanner.jpg')}}');"/>
+    <x-front-banner style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%, 
+        rgba(50,91,57,0.8) 100%), url('{{ asset('assets/homebanner.jpg')}}');">    
+    
+        <x-slot name="titulo"> {{$temporada->nome}} </x-slot> 
+    </x-front-banner>
 
         <div style="margin: 2rem 0">
         <div class="container">

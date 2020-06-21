@@ -4,17 +4,19 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class FrontBanner extends Component
+class modal extends Component
 {
+
+    public $id;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($id)
     {
-        //
+        $this->id = $id;
     }
 
     /**
@@ -24,6 +26,6 @@ class FrontBanner extends Component
      */
     public function render()
     {
-        return view('components.front-banner');
+        return view('components.modal');
     }
 }
