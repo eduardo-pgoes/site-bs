@@ -254,7 +254,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-3">
                                         <div class="input-group">
-                                            <input required name="foto" type="file">
+                                            <input required multiple name="fotos[]" type="file">
                                         </div>
                                     </div>
                                     <div class="col-3">

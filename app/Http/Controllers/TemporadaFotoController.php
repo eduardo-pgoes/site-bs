@@ -22,19 +22,21 @@ class TemporadaFotoController extends Controller
     {
 
         $request->validate([
-            'foto' => 'required',
+            'fotos' => 'required',
             'temporada_id' =>'required'
         ]);
-
-        
-        $foto = new Temporada_Foto();
-
-        $foto->temporada_id = $request->input('temporada_id');
-        
-        $path = $request->file('foto')->store('temporada_fotos',['disk'=>'public']);
-        $foto->caminho = $path;
-
-        $foto->save();
+     
+        foreach($request->file('fotos') as $file)
+        {   
+            $foto = new Temporada_Foto();
+            
+            $foto->temporada_id = $request->input('temporada_id');
+            
+            $path = $file->store('temporada_fotos',['disk'=>'public']);
+            $foto->caminho = $path;
+            
+            $foto->save();
+        }
 
         return back();
     }
