@@ -20,11 +20,18 @@ class TemporadaFotoController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('foto')->store('temporada_fotos',['disk'=>'public']);
-                
+
+        $request->validate([
+            'foto' => 'required',
+            'temporada_id' =>'required'
+        ]);
+
+        
         $foto = new Temporada_Foto();
 
-        $foto->temporada_id = $request['temporada_id'];
+        $foto->temporada_id = $request->input('temporada_id');
+        
+        $path = $request->file('foto')->store('temporada_fotos',['disk'=>'public']);
         $foto->caminho = $path;
 
         $foto->save();
@@ -44,7 +51,7 @@ class TemporadaFotoController extends Controller
 
         $temporada_Foto = Temporada_Foto::where('id',$id)->first();
 
-        Storage::delete($temporada_Foto->caminho);
+        Storage::disk('public')->delete($temporada_Foto->caminho);
         $ano = Temporada::where('id',$temporada_Foto->temporada_id)->first()->ano;
                 
         $temporada_Foto->delete();

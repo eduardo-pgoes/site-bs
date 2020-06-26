@@ -16,7 +16,7 @@ class CreateApoiadoresTable extends Migration
         Schema::create('Apoiadores', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('sobre');
+            $table->longText('sobre');
             $table->string('logo');
             $table->timestamps();
         });

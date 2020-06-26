@@ -19,14 +19,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'titulo' => 'required',
+            'conteudo' => 'required',
+            'url' => 'required',
+            'resenha' => 'required',
+            'post_foto' => 'required'
+        ]);
+
         $post = new Post();
 
-        $post->titulo = $request['titulo'];
-        $post->conteudo = $request['conteudo'];
-        $post->url = $request['url'];
-        $post->resenha = $request['resenha'];
+        $post->titulo = $request->input('titulo');
+        $post->conteudo = $request->input('conteudo');
+        $post->url = $request->input('url');
+        $post->resenha = $request->input('resenha');
 
-        $path = $request->file('post_foto')->store('temporada_fotos',['disk'=>'public']);
+        $path = $request->file('post_foto')->store('post_banner',['disk'=>'public']);
         $post->post_foto = $path;
 
         $post->save();
@@ -43,16 +52,24 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->titulo = $request['titulo'];
-        $post->conteudo = $request['conteudo'];
-        $post->url = $request['url'];
-        $post->resenha = $request['resenha'];
 
-        if(isset($request['post_foto'])){
+        $request->validate([
+            'titulo' => 'required',
+            'conteudo' => 'required',
+            'url' => 'required',
+            'resenha' => 'required',
+        ]);
+     
+        $post->titulo = $request->input('titulo');
+        $post->conteudo = $request->input('conteudo');
+        $post->url = $request->input('url');
+        $post->resenha = $request->input('resenha');
 
-            Storage::delete($post->post_foto);
+        if($request->has('post_foto')){
 
-            $path = $request->file('post_foto')->store('temporada_fotos',['disk'=>'public']);
+             Storage::disk('public')->delete($post->post_foto);
+
+            $path = $request->file('post_foto')->store('post_banner',['disk'=>'public']);
 
             $post->post_foto = $path;
         }
@@ -70,7 +87,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        Storage::delete($post->post_foto);
+         Storage::disk('public')->delete($post->post_foto);
 
         $post->delete();
         

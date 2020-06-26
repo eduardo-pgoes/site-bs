@@ -30,7 +30,7 @@
                             <div class="col">
                                 <p>Nome</p>
                                 <div class="input-group">
-                                    <input name="nome" value="{{$apoiadorAtual->nome ?? ''}}" type="text">
+                                    <input required name="nome" value="{{$apoiadorAtual->nome ?? ''}}" type="text">
                                 </div>
                             </div>
                             <div class="col">
@@ -44,7 +44,7 @@
                             <div class="col-6">
                                 <p>Sobre</p>
                                 <div class="input-group">
-                                    <input name="sobre" value="{{$apoiadorAtual->sobre ?? ''}}" type="text">
+                                    <input required name="sobre" value="{{$apoiadorAtual->sobre ?? ''}}" type="text">
                                 </div>
                             </div>
                         </div>

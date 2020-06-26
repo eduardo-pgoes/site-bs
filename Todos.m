@@ -1,3 +1,9 @@
-TODO estilo de texto global
-TODO dashboard para os patrocinadores
-TODO Refatorar o front Banner para fazer uso de Slots
+TODO css global padronizado
+TODO Internacionalização
+TODO Ativar Modals sem botão
+TODO Invite Code 
+TODO Melhorar Layout Dashboard
+TODO Registrar Patrocinadores
+TODO Server Script
+TODO Aceitar multiplas fotos
+

@@ -20,11 +20,17 @@ class PostFotoController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'foto' => 'required',
+            'Post_id' => 'required',
+        ]);
+
         $path = $request->file('foto')->store('Post_fotos',['disk'=>'public']);
                 
         $foto = new PostFoto();
 
-        $foto->Post_id = $request['Post_id'];
+        $foto->Post_id = $request->input('Post_id');
         $foto->caminho = $path;
 
         $foto->save();
@@ -44,7 +50,7 @@ class PostFotoController extends Controller
 
         $PostFoto = PostFoto::where('id',$id)->first();
 
-        Storage::delete($PostFoto->caminho);
+        Storage::disk('public')->delete($PostFoto->caminho);
         $url = Post::where('id',$PostFoto->Post_id)->first()->url;
                 
         $PostFoto->delete();

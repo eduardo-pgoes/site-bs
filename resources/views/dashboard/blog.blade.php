@@ -30,7 +30,7 @@
                             <div class="col">
                                 <p>Titulo</p>
                                 <div class="input-group">
-                                    <input name="titulo" value="{{$postAtual->titulo ?? ''}}" type="text">
+                                    <input required name="titulo" value="{{$postAtual->titulo ?? ''}}" type="text">
                                 </div>
                             </div>
                             <div class="col">
@@ -44,13 +44,13 @@
                             <div class="col">
                                 <p>URL</p>
                                 <div class="input-group">
-                                    <input name="url" value="{{$postAtual->url ?? ''}}" type="text">
+                                    <input required name="url" value="{{$postAtual->url ?? ''}}" type="text">
                                 </div>
                             </div>
                             <div class="col">
                                 <p>Conteúdo</p>
                                 <div class="input-group">
-                                    <textarea name="conteudo" cols="30"> {{$postAtual->conteudo ?? ''}} </textarea>
+                                    <textarea required name="conteudo" cols="30"> {{$postAtual->conteudo ?? ''}} </textarea>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             <div class="col-6">
                                 <p>Resenha</p>
                                 <div class="input-group">
-                                    <input name="resenha" value="{{$postAtual->resenha ?? ''}}" type="text">
+                                    <input required name="resenha" value="{{$postAtual->resenha ?? ''}}" type="text">
                                 </div>
                             </div>
                         </div>

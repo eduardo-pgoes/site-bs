@@ -1,7 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-2" style="max-height:300px; overflow-y:scroll;">
@@ -30,13 +29,13 @@
                             <div class="col">
                                 <p>Nome:</p>
                                 <div class="input-group">
-                                    <input name="nome" value="{{$temporadaAtual->nome ?? ''}}" type="text">
+                                    <input required name="nome" value="{{$temporadaAtual->nome ?? ''}}" type="text">
                                 </div>
                             </div>
                             <div class="col">
                                 <p>Url do kickoff</p>
                                 <div class="input-group">
-                                    <input name="video_url" value="{{$temporadaAtual->video_url ?? ''}}" type="text">
+                                    <input required name="video_url" value="{{$temporadaAtual->video_url ?? ''}}" type="text">
                                 </div>
                             </div>
                         </div>
@@ -44,7 +43,7 @@
                             <div class="col">
                                 <p>Ano</p>
                                 <div class="input-group">
-                                    <input name="ano" value="{{$temporadaAtual->ano ?? ''}}" type="text">
+                                    <input required min="1980" max="2200" name="ano" value="{{$temporadaAtual->ano ?? ''}}" type="number">
                                 </div>
                             </div>
                             <div class="col">
@@ -58,13 +57,13 @@
                             <div class="col">
                                 <p>Descrição da temporada</p>
                                 <div class="input-group">
-                                    <textarea name="descricao" cols="30"> {{$temporadaAtual->descricao ?? ''}} </textarea>
+                                    <textarea required name="descricao" cols="30"> {{$temporadaAtual->descricao ?? ''}} </textarea>
                                 </div>
                             </div>
                             <div class="col">
                                 <p>Descrição do Robô</p>
                                 <div class="input-group">
-                                    <textarea name="robo_desc" cols="30"> {{$temporadaAtual->robo_desc ?? ''}} </textarea>
+                                    <textarea required name="robo_desc" cols="30"> {{$temporadaAtual->robo_desc ?? ''}} </textarea>
                                 </div>
                             </div>
                         </div> 
@@ -101,7 +100,7 @@
                                     <div class="col-2">Nome</div>
                                     <div class="col-3">
                                         <div class="input-group">
-                                            <input name="nome" value="{{$regional->nome}}" type="text">
+                                            <input required name="nome" value="{{$regional->nome}}" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +108,7 @@
                                     <div class="col-2">Local</div>
                                     <div class="col-3">
                                         <div class="input-group">
-                                            <input name="local" value="{{$regional->local}}" type="text">
+                                            <input required name="local" value="{{$regional->local}}" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +116,7 @@
                                     <div class="col-2">Data</div>
                                     <div class="col-3">
                                         <div class="input-group">
-                                            <input name="data" value="{{$regional->data}}" type="text">
+                                            <input required name="data" value="{{$regional->data}}" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +124,7 @@
                                     <div class="col-2">Classificação</div>
                                     <div class="col-3">
                                         <div class="input-group">
-                                            <input name="classificacao" value="{{$regional->classificacao}}" type="text">
+                                            <input required name="classificacao" value="{{$regional->classificacao}}" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +162,7 @@
                                 <div class="col-2">Nome</div>
                                 <div class="col-3">
                                     <div class="input-group">
-                                        <input name="nome" type="text">
+                                        <input required name="nome" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +170,7 @@
                                 <div class="col-2">Local</div>
                                 <div class="col-3">
                                     <div class="input-group">
-                                        <input name="local" type="text">
+                                        <input required name="local" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +178,7 @@
                                 <div class="col-2">Data</div>
                                 <div class="col-3">
                                     <div class="input-group">
-                                        <input name="data" type="text">
+                                        <input required name="data" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +186,7 @@
                                 <div class="col-2">Classificação</div>
                                 <div class="col-3">
                                     <div class="input-group">
-                                        <input name="classificacao" type="text">
+                                        <input required name="classificacao" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +254,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-3">
                                         <div class="input-group">
-                                            <input name="foto" type="file">
+                                            <input required name="foto" type="file">
                                         </div>
                                     </div>
                                     <div class="col-3">

@@ -19,14 +19,23 @@ class RegionalController extends Controller
      */
     public function store(Request $request)
     {
+     
+        $request->validate([
+            'temporada_id' => 'required',
+            'nome' => 'required',
+            'local' => 'required',
+            'data' => 'required',
+            'classificacao' => 'required',
+        ]);
+
         $regional = new Regional();
 
-        $regional->temporada_id = $request['temporada_id'];
-        $regional->nome = $request['nome'];
-        $regional->local = $request['local'];
-        $regional->data = $request['data'];
-        $regional->classificacao = $request['classificacao'];
-        $regional->premios = $request['premios'];
+        $regional->temporada_id = $request->input('temporada_id');
+        $regional->nome = $request->input('nome');
+        $regional->local = $request->input('local');
+        $regional->data = $request->input('data');
+        $regional->classificacao = $request->input('classificacao');
+        $regional->premios = $request->input('premios');
 
         $regional->save();
 
@@ -42,11 +51,20 @@ class RegionalController extends Controller
      */
     public function update(Request $request, Regional $regional)
     {
-        $regional->nome = $request['nome'];
-        $regional->local = $request['local'];
-        $regional->data = $request['data'];
-        $regional->classificacao = $request['classificacao'];
-        $regional->premios = $request['premios'];
+
+        $request->validate([
+            'temporada_id' => 'required',
+            'nome' => 'required',
+            'local' => 'required',
+            'data' => 'required',
+            'classificacao' => 'required',
+        ]);
+
+        $regional->nome = $request->input('nome');
+        $regional->local = $request->input('local');
+        $regional->data = $request->input('data');
+        $regional->classificacao = $request->input('classificacao');
+        $regional->premios = $request->input('premios');
 
         $regional->save();
 

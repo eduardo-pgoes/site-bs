@@ -19,10 +19,17 @@ class ApoiadorController extends Controller
      */
     public function store(Request $request)
     {   
+
+        $request->validate([
+            'nome' => 'required',
+            'sobre' => 'required',
+            'logo' => 'required',
+        ]);
+
         $apoiador = new Apoiador();
         
-        $apoiador->nome = $request['nome'];
-        $apoiador->sobre = $request['sobre'];
+        $apoiador->nome = $request->input('nome');
+        $apoiador->sobre = $request->input('sobre');
 
         $path = $request->file('logo')->store('Apoio_logos',['disk'=>'public']);
         $apoiador->logo = $path;
@@ -43,12 +50,18 @@ class ApoiadorController extends Controller
     public function update(Request $request, Apoiador $apoiador)
     {   
 
-        $apoiador->nome = $request['nome'];
-        $apoiador->sobre = $request['sobre'];
 
-        if(isset($request['logo'])){
+        $request->validate([
+            'nome' => 'required',
+            'sobre' => 'required',
+        ]);
 
-            Storage::delete($apoiador->logo);
+        $apoiador->nome = $request->input('nome');
+        $apoiador->sobre = $request->input('sobre');
+
+        if($request->has('logo')){
+
+             Storage::disk('public')->delete($apoiador->logo);
 
             $path = $request->file('logo')->store('Apoio_logos',['disk'=>'public']);
 
@@ -68,7 +81,7 @@ class ApoiadorController extends Controller
      */
     public function destroy(Apoiador $apoiador)
     {
-        Storage::delete($apoiador->logo);
+         Storage::disk('public')->delete($apoiador->logo);
 
         $apoiador->delete();
         return redirect('/dashboard/apoio');
