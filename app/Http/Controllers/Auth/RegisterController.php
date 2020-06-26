@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+
+
+use App\InviteCode;
+use App\User;
+
 
 class RegisterController extends Controller
 {
@@ -53,6 +58,19 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'invite_code' => 
+                [
+                    'required', 
+                    function ($attribute, $value, $fail) {
+                        $code = InviteCode::first();
+
+                        if (isset($code) && Hash::check($value, $code->code)) 
+                            $code->delete();
+
+                        else 
+                            $fail($attribute.' não autorizado.');
+                    },
+                ],
         ]);
     }
 
@@ -64,6 +82,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

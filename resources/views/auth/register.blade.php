@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Invite Code') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="invite_code" type="text" class="form-control @error('invite_code') is-invalid @enderror" name="invite_code" value="{{ old('invite_code') }}" required autocomplete="invite_code" autofocus>
+
+                                @error('invite_code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

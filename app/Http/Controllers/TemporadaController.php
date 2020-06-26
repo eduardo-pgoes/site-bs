@@ -59,7 +59,7 @@ class TemporadaController extends Controller
         $request->validate([
             'nome' => 'bail|required',
             'video_url' => 'required',
-            'ano' => ['bail','required','size:4',Rule::unique('temporadas')->ignore($temporada->id)],
+            'ano' => ['bail','required','size:4', Rule::unique('temporadas')->ignore($temporada->id)],
             'descricao' => 'bail|required|min:20',
             'robo_desc' => 'bail|required|min:20',
         ]);
