@@ -8,52 +8,43 @@
         Sem nossos apoiadores, nada seria possível.                
     </x-front-banner>
 
+    #TODO Escolher um dos três padroes
     <div class="container text-center" style="padding-top:15px">
-        <div style="margin: 30px 0px;">
-            <div>               
+    <div style="margin: 30px 0px;">
+            <div class="row row-cols-2 justify-content-around align-items-center" style="margin:25px 0" >               
                 @foreach ($apoiadores as $apoiador)
-                    @if($loop->last)
-                        @if ($loop->odd)
-                            <div class="row justify-content-around align-items-center" style="margin:25px 0" >
-                                <div class="col-5">
-                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
-                                    <x-modal :id="$loop->index" >
-                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
-                                        {{$apoiador->sobre}}
-                                    </x-modal>
-                                </div>
-                            </div>
-                        @else
-                                <div class="col-5">
-                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
-                                    <x-modal :id="$loop->index" >
-                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
-                                        {{$apoiador->sobre}}
-                                    </x-modal>
-                                </div>
-                            </div>
-                        @endif
-                    @else
-                        @if ($loop->odd)
-                            <div class="row justify-content-around align-items-center" style="margin:25px 0" >
-                                <div class="col-5">
-                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
-                                    <x-modal :id="$loop->index" >
-                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
-                                        {{$apoiador->sobre}}
-                                    </x-modal>
-                                </div>
-                        @else
-                                <div class="col-5">
-                                    <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
-                                    <x-modal :id="$loop->index" >
-                                        <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
-                                        {{$apoiador->sobre}}
-                                    </x-modal>
-                                </div>
-                            </div>
-                        @endif
-                    @endif
+                    <div class="col">
+                        <img src = "{{ URL::asset('storage/'.$apoiador->logo) }}" style="max-width:90%; " >
+                        <x-modal :id="$loop->index" >
+                            <x-slot name="titulo"> {{$apoiador->nome}} </x-slot>
+                            {{$apoiador->sobre}}
+                        </x-modal>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <hr/>
+        <div style="margin: 30px 0px;">
+            <div class="row row-cols-2 justify-content-around align-items-center" style="margin:25px 0" >               
+                @foreach ($apoiadores as $apoiador)
+                    <div class="col">
+                        <x-flip-card src_imagem="{{ URL::asset('storage/'.$apoiador->logo) }}">
+                            <h3>{{$apoiador->nome}}</h3>
+                            <p>{{$apoiador->sobre}}</p>
+                        </x-flip-card>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <hr/>
+        <div style="margin: 30px 0px;">
+            <div class="row row-cols-2 justify-content-around align-items-center" style="margin:25px 0" >               
+                @foreach ($apoiadores as $apoiador)
+                    <div class="col">
+                        <h3>{{$apoiador->nome}}</h3>
+                        <img src="{{ URL::asset('storage/'.$apoiador->logo) }}" style="width:100%"/>
+                        <p>{{$apoiador->sobre}}</p>
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -69,7 +60,7 @@
                 gestão financeira e do planejamento das atividades educacionais 
                 e comunitárias da equipe. 
             </p> 
-            <img src = "{{ URL::asset('assets/AJAPET.png') }}" style="width:80%" >
+            <img src = "{{ URL::asset('assets/AJAPET.png') }}" style="width:90%" >
         </div>
     </div>    
 @endsection
