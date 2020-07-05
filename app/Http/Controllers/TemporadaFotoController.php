@@ -32,7 +32,7 @@ class TemporadaFotoController extends Controller
             
             $foto->temporada_id = $request->input('temporada_id');
             
-            $path = $file->store('temporada_fotos',['disk'=>'public']);
+            $path = $file->store('temporada_fotos',['disk'=>'public']); 
             $foto->caminho = $path;
             
             $foto->save();

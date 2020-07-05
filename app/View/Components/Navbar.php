@@ -4,10 +4,11 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+use App\Temporada;
 
 class Navbar extends Component
 {
-
+    public $anos;
     /**
      * Create a new component instance.
      *
@@ -15,7 +16,12 @@ class Navbar extends Component
      */
     public function __construct()
     {
-       //        
+        $anos = Temporada::get()->map(function ($item)
+        {
+           return $item->ano;
+        })->sort()->reverse();
+        
+        $this->anos = $anos;
     }
     
     /**

@@ -2,8 +2,8 @@
 
 @section('layout')
 
-    <x-navbar/>
-        <div style="margin-top:60px">
+    <x-navbar anos/>
+        <div>
             @yield('content')
         </div>
     <x-footer/>

@@ -4,10 +4,10 @@
         <hr>
         <div class="row">
             <div class="col-sm text-center">
-                <img class="img-identidade" src="{{URL::asset('assets/icons/astronomy.png')}}" height="128" width="128"> </img>
-                <h2 style="font-weight: bold;"> Eletrônica e Programação </h2>
+                <img class="img-identidade" src="{{URL::asset('assets/icons/camera.svg')}}" height="128" width="128"> </img>
+                <h2 style="font-weight: bold;"> Marketing </h2>
                 <p> 
-                    a área responsável pela divulgação do time, 
+                    Área responsável pela divulgação do time, 
                     por meio de eventos em empresas e escolas da região, 
                     publicação de mídia e produção de conteúdo nas redes sociais.
                     Também cuida da identidade visual e desenvolvimento 
@@ -16,8 +16,8 @@
                 </p>
             </div>
             <div class="col-sm text-center">
-                <img class="img-identidade" src="{{URL::asset('assets/icons/science.png')}}" height="128" width="128"> </img>
-                <h2 style="font-weight: bold;"> Mecânica </h2>
+                <img class="img-identidade" src="{{URL::asset('assets/icons/coding.png')}}" height="128" width="128"> </img>
+                <h2 style="font-weight: bold;"> Eletrônica e Programação </h2>
                 <p> 
                     Eletrônica lida com a conexão fisica dos componentes eletrônicos 
                     responsavéis pela atuação dos mecanismos e os sensores, 
@@ -27,8 +27,8 @@
                 </p>
             </div>
             <div class="col-sm text-center">
-                <img class="img-identidade" src="{{URL::asset('assets/icons/startup.png')}}" height="128" width="128"> </img>
-                <h2 style="font-weight: bold;"> Admnistração e Marketing </h2>
+                <img class="img-identidade" src="{{URL::asset('assets/icons/mechanic.svg')}}" height="128" width="128"> </img>
+                <h2 style="font-weight: bold;"> Mecânica </h2>
                 <p> 
                     Tem como principais atividades projetar e confeccionar a estrutura,
                     os mecanismos e a movimentação do robô. Além disso, 

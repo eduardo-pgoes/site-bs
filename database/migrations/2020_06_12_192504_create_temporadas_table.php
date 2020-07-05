@@ -20,6 +20,7 @@ class CreateTemporadasTable extends Migration
             $table->longText('descricao');
             $table->longText('robo_desc');
             $table->string('robo_foto')->nullable();
+            $table->string('banner');
             $table->year('ano')->unique();
             $table->timestamps();
         });

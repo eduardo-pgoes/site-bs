@@ -2,12 +2,12 @@
 
 @section('content')
     <x-front-banner style="background-image: linear-gradient(180deg, rgba(30,56,35,0.8) 23%, 
-        rgba(50,91,57,0.8) 100%), url('{{ asset('assets/homebanner.jpg')}}');">    
+        rgba(50,91,57,0.8) 100%), url('{{ URL::asset('storage/'.$temporada->banner) }}');">    
     
         <x-slot name="titulo"> {{$temporada->nome}} </x-slot> 
     </x-front-banner>
 
-        <div style="margin: 2rem 0">
+        <div style="margin: 2rem">
         <div class="container">
             <div class='row'>
                 <div class='col-sm-5'>
@@ -78,15 +78,15 @@
             @foreach ($fotos as $foto)
                 @if($loop->index%3 == 0)
                 <div class="row justify-content-center">
-                    <div class="col-4">
+                    <div class="col-4" style="margin: 2rem 0;">
                         <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
                     </div>
                 @elseif($loop->index%3 == 1)
-                    <div class="col-4">
+                    <div class="col-4" style="margin: 2rem 0;">
                         <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
                     </div>
                 @else
-                    <div class="col-4">
+                    <div class="col-4" style="margin: 2rem 0;">
                         <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
                     </div>
                 </div>

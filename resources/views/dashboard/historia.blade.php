@@ -33,9 +33,15 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <p>Url do kickoff</p>
+                                <p>Foto do Robô</p>
                                 <div class="input-group">
-                                    <input required name="video_url" value="{{$temporadaAtual->video_url ?? ''}}" type="text">
+                                    <input name="robo_foto" type="file">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <p>Banner</p>
+                                <div class="input-group">
+                                    <input name="banner" type="file">
                                 </div>
                             </div>
                         </div>
@@ -47,9 +53,9 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <p>Foto do Robô</p>
+                                <p>Url do kickoff</p>
                                 <div class="input-group">
-                                    <input name="robo_foto" type="file">
+                                    <input required name="video_url" value="{{$temporadaAtual->video_url ?? ''}}" type="text">
                                 </div>
                             </div>
                         </div>
@@ -243,7 +249,7 @@
                                         </div>
                                     </div>
                                 @endif
-                            @endforeach
+                            @endforeach 
 
 
                             <form action="foto/" method="post" enctype="multipart/form-data">

@@ -3,7 +3,7 @@
         <img id="footer-brand" src="{{ URL::asset('assets/logo.png') }}" class="navbar-brand"/>
         
         <div class="mx-auto d-flex  justify-content-center flex-wrap align-content-center">
-            <p id="text-footer">Mensagem pedindo p/ as pessoas entrarem em contato</p>
+            <p id="text-footer">Ainda tem alguma dúvida ou quer nos conhecer melhor? Entre em contato com a gente!</p>
             <div id="icons-footer">
                 <a href="mailto:name@email.com">
                     <img class="media-icon" src="{{ URL::asset('assets/icons-media/envelope-regular.svg') }}"/>
@@ -17,8 +17,8 @@
                 <a href="https://twitter.com/FRC6404" >
                     <img class="media-icon" src="{{ URL::asset('assets/icons-media/twitter-brands.svg') }}"/>
                 </a>
-                <a href="https://wa.me/XXXXXX">
-                    <img class="media-icon" src="{{ URL::asset('assets/icons-media/whatsapp-square-brands.svg') }}"/>
+                <a href="https://www.youtube.com/channel/UCl3ifhZCTczquj5W92N6qAw">
+                    <img class="media-icon" src="{{ URL::asset('assets/icons-media/youtube-brands.svg') }}"/>
                 </a>
             </div>  
         </div>  

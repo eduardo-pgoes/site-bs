@@ -1,8 +1,8 @@
 <div>
     <div class="container">
-        <h2 class="text-center text-front-embed">
-            Assista ao nosso vídeo promo!
-        </h2>
+        <h1 class="text-center text-front-embed">
+            Quem Somos?
+        </h1>
         <div class='row'>
             <div class='col-sm-2'></div>
             <div class='col-sm-8'>

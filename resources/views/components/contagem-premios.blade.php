@@ -6,11 +6,11 @@
                 <p> Anos </p>
             </div>
             <div class="col-sm text-center">
-                <h2 class="font-weight-bold display-4">4</h2>
-                <p> Prêmios </p>
+                <h2 class="font-weight-bold display-4">6</h2>
+                <p> Conquistas </p>
             </div>
             <div class="col-sm text-center">
-                <h2 class="font-weight-bold display-4">33</h2>
+                <h2 class="font-weight-bold display-4">25</h2>
                 <p> Alunos </p>
             </div>
             <div class="col-sm text-center">

@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Temporada;
 use App\Post;
-
+use App\Apoiador;
 
 class PagesController extends Controller
 {
-    
     public function apoio(){
-        return view('apoio');
+        $apoiadores = Apoiador::get();
+        
+        return view('apoio', ['apoiadores' => $apoiadores]);
     }
 
     public function historia($ano){

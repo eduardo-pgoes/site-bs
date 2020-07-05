@@ -18,7 +18,7 @@
             </div>
             <div class="col">
                 <div class="container">
-                    <h3>Post</h3>
+                    <h3>Apoiador</h3>
                     @if(empty($apoiadorAtual ?? ''))
                         <form action="apoio/apoiador" enctype="multipart/form-data" method="post">                    
                     @else
@@ -44,7 +44,7 @@
                             <div class="col-6">
                                 <p>Sobre</p>
                                 <div class="input-group">
-                                    <input required name="sobre" value="{{$apoiadorAtual->sobre ?? ''}}" type="text">
+                                    <textarea required name="sobre" cols="30"> {{$apoiadorAtual->sobre ?? ''}} </textarea>
                                 </div>
                             </div>
                         </div>
