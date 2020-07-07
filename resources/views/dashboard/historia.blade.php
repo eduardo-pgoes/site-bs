@@ -252,9 +252,8 @@
                             @endforeach 
 
 
-                            <form action="foto/" method="post" enctype="multipart/form-data">
+                            <form action="foto" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                
                                 <input type="hidden" name="temporada_id" value="{{ $temporadaAtual->id }}">
 
                                 <div class="row justify-content-center">

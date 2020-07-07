@@ -8,7 +8,7 @@
 
     <div class="container" style="height:400px; margin-top:70px;">
         <h1>
-            Blog ainda indisponível
+            Blog temporariamente indisponível
         </h1>    
     </div>
 
@@ -56,5 +56,4 @@
         </div>
     </div>
     --}}
-
 @endsection

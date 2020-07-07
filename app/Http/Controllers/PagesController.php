@@ -19,7 +19,8 @@ class PagesController extends Controller
     public function historia($ano){
 
         $temp = Temporada::where('ano', $ano)->first();
-        
+        if(empty($temp)) abort(404);
+	       
         $regionais = $temp->regionais()->get();
         $fotos = $temp->temporada_fotos()->get();
 
