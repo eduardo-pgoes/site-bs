@@ -29,14 +29,14 @@
         </div>
     </div>
     <div class="jumbotron">
-        <h2>
-            O Robô
-        </h2>
         <div class='row'>
             <div class='col-sm-6'>
                 <img style="width:100%" src="{{ URL::asset('storage/'.$temporada->robo_foto) }}" alt="Foto de exibição do Robô">
             </div>
             <div class='col-sm-6'>
+                <h1 style="font-weight: bold;">
+                    O Robô
+                </h1>
                 <h5>
                     {{ $temporada->robo_desc }}
                 </h5>
@@ -47,9 +47,9 @@
     @if(isset($regionais[0]))  
         <div style="margin: 2rem 0">
             <div class="container">         
-                    <h2>
+                    <h1 style="font-weight: bold;">
                         Competições
-                    </h2>
+                    </h1>
                 @foreach($regionais as $regional)
                     <h5>
                         {{ $regional->nome }}
@@ -72,9 +72,9 @@
     @endif
     @if(isset($fotos[0]))
         <div class="jumbotron">
-            <h2>
+            <h1 style="font-weight: bold; text-align:center;">
                 Fotos
-            </h2>
+            </h1>
             @foreach ($fotos as $foto)
                 @if($loop->index%3 == 0)
                 <div class="row justify-content-center">

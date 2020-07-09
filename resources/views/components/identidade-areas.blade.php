@@ -36,6 +36,17 @@
                     física e engenharia entre os alunos.
                 </p>
             </div>
+            <div class="col-sm text-center">
+                <img class="img-identidade" src="{{URL::asset('assets/icons/inbox.svg')}}" height="128" width="128"> </img>
+                <h2 style="font-weight: bold;"> Administração </h2>
+                <p> 
+                    É responsável pelo planejamento do time, agenda,
+                    controle dos registros dos membros, controle da frequência,
+                    documentação geral,  gestão financeira, logística, 
+                    gerenciamento de contratos, planejamento de viagens, 
+                    busca de patrocínios e parcerias.
+                </p>
+            </div>
         </div>
     </div>
 </div>

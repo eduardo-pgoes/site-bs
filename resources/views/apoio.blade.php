@@ -37,7 +37,7 @@
         <div class="container" style="margin:10% 0">
             <h4>AJAPET</h4>
             <p class="text-justify" style="margin:15px 0px 30px 0px; padding:5px">
-                A AJAPET (Associação Joseense para Apoio à pesquisa e Ensino em Tecnologia)
+                A AJAPET (Associação Joseense para Apoio à Pesquisa e Ensino em Tecnologia)
                 é uma instituição sem fins lucrativos, 
                 criada em 2018 pela diretoria da equipe para representar o time juridicamente
                 e sustentar suas atividades. É composta por alguns de nossos mentores,

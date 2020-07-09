@@ -1,7 +1,7 @@
  
 <nav class="navbar navbar-expand-md navbar-dark navbar-color">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{ URL::asset('assets/logo.png') }}" height="70px">
+        <img src="{{ URL::asset('assets/logo_cortada.png') }}" height="70px">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

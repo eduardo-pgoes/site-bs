@@ -5,9 +5,6 @@
         <div class="mx-auto d-flex  justify-content-center flex-wrap align-content-center">
             <p id="text-footer">Ainda tem alguma dúvida ou quer nos conhecer melhor? Entre em contato com a gente!</p>
             <div id="icons-footer">
-                <a href="mailto:name@email.com">
-                    <img class="media-icon" src="{{ URL::asset('assets/icons-media/envelope-regular.svg') }}"/>
-                </a>
                 <a href="https://facebook.com/frc6404">
                     <img class="media-icon" src="{{ URL::asset('assets/icons-media/facebook-square-brands.svg') }}"/>
                 </a>
@@ -19,6 +16,9 @@
                 </a>
                 <a href="https://www.youtube.com/channel/UCl3ifhZCTczquj5W92N6qAw">
                     <img class="media-icon" src="{{ URL::asset('assets/icons-media/youtube-brands.svg') }}"/>
+                </a>
+                <a href="mailto:name@email.com">
+                    <img class="media-icon" src="{{ URL::asset('assets/icons-media/envelope-regular.svg') }}"/>
                 </a>
             </div>  
         </div>  
