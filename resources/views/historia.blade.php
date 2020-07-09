@@ -75,23 +75,23 @@
             <h1 style="font-weight: bold; text-align:center;">
                 Fotos
             </h1>
-            @foreach ($fotos as $foto)
-                @if($loop->index%3 == 0)
-                <div class="row justify-content-center">
-                    <div class="col-4" style="margin: 2rem 0;">
-                        <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
-                    </div>
-                @elseif($loop->index%3 == 1)
-                    <div class="col-4" style="margin: 2rem 0;">
-                        <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
-                    </div>
-                @else
-                    <div class="col-4" style="margin: 2rem 0;">
-                        <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
-                    </div>
-                </div>
-                @endif
-            @endforeach
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
+                @foreach ($fotos as $foto)
+                    @if($loop->index%3 == 0)
+                        <div class="col" style="margin: 2rem 0;">
+                            <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
+                        </div>
+                    @elseif($loop->index%3 == 1)
+                        <div class="col" style="margin: 2rem 0;">
+                            <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
+                        </div>
+                    @else
+                        <div class="col" style="margin: 2rem 0;">
+                            <img style="width:100%" src="{{ url('storage/'.$foto->caminho) }}" alt="Foto da temporada">
+                        </div>
+                        @endif
+                @endforeach
+            </div>
         </div>
     @endif
 @endsection
