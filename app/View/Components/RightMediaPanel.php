@@ -12,13 +12,6 @@ class RightMediaPanel extends Component
      * @var string
      */
     public $title;
-    
-    /**
-     * O conteúdo do painel.
-     *
-     * @var string
-     */
-    public $content;
 
     /**
      * URL da imagem do painel.
@@ -32,11 +25,10 @@ class RightMediaPanel extends Component
      *
      * @return void
      */
-    public function __construct($title, $content, $image)
+    public function __construct($title, $image)
     {
         $this->image = $image;
         $this->title = $title;
-        $this->content = $content;
     }
 
     /**

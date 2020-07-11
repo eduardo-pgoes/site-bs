@@ -12,6 +12,7 @@
         <li data-target="#carouselFrontIndicators" data-slide-to="5"></li>
         <li data-target="#carouselFrontIndicators" data-slide-to="6"></li>
         <li data-target="#carouselFrontIndicators" data-slide-to="7"></li>
+        <li data-target="#carouselFrontIndicators" data-slide-to="8"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -34,6 +35,9 @@
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="{{URL::asset('assets/Home Carrosel/Tech Challenge.jpg')}}" alt="Tech Challenge" >
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{{URL::asset('assets/Home Carrosel/Tech Challenge1.jpg')}}" alt="Tech Challenge" >
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselFrontIndicators" role="button" data-slide="prev">

@@ -164,6 +164,7 @@
                         <form action="regional/" method="post">
                             @csrf
                             <input type="hidden" name="temporada_id" value="{{ $temporadaAtual->id }}">
+                            
                             <div class="row justify-content-start">
                                 <div class="col-2">Nome</div>
                                 <div class="col-3">

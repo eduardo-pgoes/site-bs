@@ -17,7 +17,7 @@
                 <a href="https://www.youtube.com/channel/UCl3ifhZCTczquj5W92N6qAw">
                     <img class="media-icon" src="{{ URL::asset('assets/icons-media/youtube-brands.svg') }}"/>
                 </a>
-                <a href="mailto:name@email.com">
+                <a href="mailto:frcbrazilianstorm@gmail.com">
                     <img class="media-icon" src="{{ URL::asset('assets/icons-media/envelope-regular.svg') }}"/>
                 </a>
             </div>  

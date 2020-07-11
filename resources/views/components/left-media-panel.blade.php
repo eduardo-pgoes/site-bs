@@ -7,7 +7,7 @@
             </div>
             <div class="col-md order-1 order-md-2">
                 <h1 class="h1-media" style="font-weight: bold;">{{$title}}</h1>
-                <p> {{$content}}</p>
+                <p> {{$slot}}</p>
             </div>
         </div>
     </div>

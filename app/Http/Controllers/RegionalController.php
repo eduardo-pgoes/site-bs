@@ -53,7 +53,6 @@ class RegionalController extends Controller
     {
 
         $request->validate([
-            'temporada_id' => 'required',
             'nome' => 'required',
             'local' => 'required',
             'data' => 'required',
