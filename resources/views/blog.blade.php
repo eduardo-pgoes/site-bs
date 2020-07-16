@@ -8,7 +8,7 @@
 
     <div class="container" style="height:400px; margin-top:70px;">
         <h1>
-            Blog temporariamente indisponível
+            Posts em Breve
         </h1>    
     </div>
 

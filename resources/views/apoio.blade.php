@@ -34,8 +34,8 @@
             @endforeach
         </div>
         <hr/>
-        <div class="container" style="margin:10% 0">
-            <h4>AJAPET</h4>
+        <div class="container" style="margin:5% 0">
+            <h4 style="font-weight: bold;">AJAPET</h4>
             <p class="text-justify" style="margin:15px 0px 30px 0px; padding:5px">
                 A AJAPET (Associação Joseense para Apoio à Pesquisa e Ensino em Tecnologia)
                 é uma instituição sem fins lucrativos, 
@@ -46,6 +46,26 @@
                 e comunitárias da equipe. 
             </p> 
             <img src = "{{ URL::asset('assets/AJAPET.png') }}" style="width:90%" >
+        </div>
+        <hr/>
+        <div class="container">
+            <h4 style="font-weight: bold;">Apoio</h4>
+            <img src = "{{ URL::asset('assets/alceu_cinza.png') }}" style="width:60%" >
+        </div>
+        <hr/>
+        <div class="container" style="margin:5% 0">
+            <h4 style="font-weight: bold;">Agradecimentos Especiais</h4>
+            <img src="{{URL::asset('assets/coracao.png')}}" style="width:5%">
+            <p class="text-justify" style="padding:5px">
+                <ul class="list-unstyled">
+                    <li>Carl Nordstrom</li>
+                    <li>Stephanie Badame</li>
+                    <li>Jorge Costa</li>
+                    <li>Sylvia & Robert Frank</li>
+                    <li>Karen & Rande Johnson</li>
+                    <li>Edwardsville Technologies #4931</li>
+                </ul>
+            </p> 
         </div>
     </div>    
 @endsection

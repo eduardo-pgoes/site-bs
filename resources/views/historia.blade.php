@@ -30,10 +30,10 @@
     </div>
     <div class="jumbotron">
         <div class='row'>
-            <div class='col-sm-6'>
+            <div class='col-sm order-2 order-sm-1 '>
                 <img style="width:100%" src="{{ URL::asset('storage/'.$temporada->robo_foto) }}" alt="Foto de exibição do Robô">
             </div>
-            <div class='col-sm-6'>
+            <div class='col-sm order-1 order-sm-2'>
                 <h1 style="font-weight: bold;">
                     O Robô
                 </h1>
